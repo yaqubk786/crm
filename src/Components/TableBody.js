@@ -139,6 +139,78 @@ const TableBody = () => {
               <FaEye />
             </td>
           </tr>
+          <tr>
+            <td>Jill</td>
+            <td>Smith</td>
+            <td>example.com</td>
+            <td>123456789</td>
+            <td>Mahendra</td>
+            <td>
+              <div className="statusBox">
+                <div>Complete</div>
+                <div>+ 4 more</div>
+              </div>
+            </td>
+            <td>Colege search</td>
+            <td>NA</td>
+            <td>
+              <FaEye />
+            </td>
+          </tr>
+          <tr>
+            <td>Jill</td>
+            <td>Smith</td>
+            <td>example.com</td>
+            <td>123456789</td>
+            <td>Mahendra</td>
+            <td>
+              <div className="statusBox">
+                <div>Complete</div>
+                <div>+ 4 more</div>
+              </div>
+            </td>
+            <td>Colege search</td>
+            <td>NA</td>
+            <td>
+              <FaEye />
+            </td>
+          </tr>
+          <tr>
+            <td>Jill</td>
+            <td>Smith</td>
+            <td>example.com</td>
+            <td>123456789</td>
+            <td>Mahendra</td>
+            <td>
+              <div className="statusBox">
+                <div>Complete</div>
+                <div>+ 4 more</div>
+              </div>
+            </td>
+            <td>Colege search</td>
+            <td>NA</td>
+            <td>
+              <FaEye />
+            </td>
+          </tr>
+          <tr>
+            <td>Jill</td>
+            <td>Smith</td>
+            <td>example.com</td>
+            <td>123456789</td>
+            <td>Mahendra</td>
+            <td>
+              <div className="statusBox">
+                <div>Complete</div>
+                <div>+ 4 more</div>
+              </div>
+            </td>
+            <td>Colege search</td>
+            <td>NA</td>
+            <td>
+              <FaEye />
+            </td>
+          </tr>
         </table>
       </div>
     </>

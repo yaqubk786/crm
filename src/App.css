@@ -376,12 +376,14 @@ td {
   .toggle-btn {
     margin-bottom: 10px;
     margin-left: auto;
+    font-size: 20px;
   }
   .topbox {
     justify-content: end;
     width: 100%;
     font-size: 22px;
     cursor: pointer;
+    font-weight: bold;
   }
   .content-body h2 {
     display: none;
@@ -405,8 +407,8 @@ td {
   .tableBodyBox {
     overflow-x: auto;
     width: 700px;
-    height: 600px;
     margin-top: 40px;
+    height: 100vh;
   }
   .leadNavs div {
     font-size: 20px;
@@ -419,7 +421,7 @@ td {
   }
   .dataTable tr th,
   .dataTable tr td {
-    font-size: 25px;
+    font-size: 28px;
   }
   .side-nav ul li {
     font-size: 30px;
