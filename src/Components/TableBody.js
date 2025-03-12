@@ -63,7 +63,9 @@ const TableBody = () => {
             </td>
             <td>Colege search</td>
             <td>NA</td>
-            <td><FaEye/></td>
+            <td>
+              <FaEye />
+            </td>
           </tr>
           <tr>
             <td>Jill</td>
@@ -79,7 +81,9 @@ const TableBody = () => {
             </td>
             <td>Colege search</td>
             <td>NA</td>
-            <td><FaEye/></td>
+            <td>
+              <FaEye />
+            </td>
           </tr>
           <tr>
             <td>Jill</td>
@@ -95,7 +99,9 @@ const TableBody = () => {
             </td>
             <td>Colege search</td>
             <td>NA</td>
-            <td><FaEye/></td>
+            <td>
+              <FaEye />
+            </td>
           </tr>
           <tr>
             <td>Jill</td>
@@ -111,7 +117,9 @@ const TableBody = () => {
             </td>
             <td>Colege search</td>
             <td>NA</td>
-            <td><FaEye/></td>
+            <td>
+              <FaEye />
+            </td>
           </tr>
           <tr>
             <td>Jill</td>
@@ -127,7 +135,9 @@ const TableBody = () => {
             </td>
             <td>Colege search</td>
             <td>NA</td>
-            <td><FaEye/></td>
+            <td>
+              <FaEye />
+            </td>
           </tr>
         </table>
       </div>

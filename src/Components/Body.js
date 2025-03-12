@@ -5,7 +5,7 @@ const Body = () => {
   return (
     <>
       <div className="leadBox">
-      <h2>All Leads</h2>
+        <h2>All Leads</h2>
 
         <div className="firstBox">
           <div className="leadNavs">

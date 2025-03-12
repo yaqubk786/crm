@@ -5,7 +5,7 @@ import TableBody from "./TableBody";
 
 const Table = () => {
   return (
-    <div>
+    <div className="tableParent">
       <div className="tableNavContainer">
         <div className="leftTableNav">
           <p>All Leads</p>
@@ -15,11 +15,21 @@ const Table = () => {
         </div>
         <div className="rightTableNav">
           <div>Add New</div>
-          <div><span><IoCloudUploadOutline/></span>Get USP</div>
-          <div><span><FiDownload/></span>Download</div>
+          <div>
+            <span>
+              <IoCloudUploadOutline />
+            </span>
+            Get USP
+          </div>
+          <div>
+            <span>
+              <FiDownload />
+            </span>
+            Download
+          </div>
         </div>
       </div>
-      <TableBody/>
+      <TableBody />
     </div>
   );
 };
