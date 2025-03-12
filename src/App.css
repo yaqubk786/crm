@@ -1,38 +1,488 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: hkgrotesk, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app {
+  display: flex;
+  height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.side-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  /* background-color: blue; */
+  background-image: linear-gradient(
+    180deg,
+    hsl(240deg 100% 20%) 0%,
+    hsl(270deg 100% 21%) 18%,
+    hsl(286deg 100% 21%) 26%,
+    hsl(301deg 100% 21%) 33%,
+    hsl(313deg 100% 26%) 39%,
+    hsl(322deg 100% 30%) 44%,
+    hsl(329deg 100% 35%) 50%,
+    hsl(335deg 100% 38%) 56%,
+    hsl(339deg 100% 42%) 61%,
+    hsl(344deg 100% 44%) 67%,
+    hsl(348deg 100% 47%) 74%,
+    hsl(352deg 100% 49%) 82%,
+    hsl(0deg 100% 50%) 100%
+  );
+  color: white;
+  padding-top: 50px;
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.side-nav.closed {
+  transform: translateX(-400px);
+}
+
+.side-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.side-nav ul li {
+  padding: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.side-nav ul li span {
+  font-size: 18px;
+}
+
+.side-nav ul li:hover {
+  background-color: white;
+  color: blue;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 0 20px 20px 0;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+.main-content.expanded {
+  margin-left: 250px;
+}
+
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  border-bottom: 1px solid none;
+  box-shadow: 0 10px 25px #38414a26;
+  margin-bottom: 30px;
+}
+
+.toggle-btn {
+  font-size: 14px;
+  background-color: #299cdb;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  gap: 5px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.top-header h1 {
+  font-size: 24px;
+}
+
+.leftBox img {
+  height: 100px;
+  margin-left: 40px;
+}
+
+.topbox {
+  display: flex;
+  gap: 100px;
+  align-items: center;
+}
+.socialIcons {
+  display: flex;
+  gap: 20px;
+}
+.top-header .topbox .activeBox,
+.top-header .topbox .timeBox {
+  padding: 10px 30px;
+  border: 1px solid #abb0ba;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  white-space: nowrap;
+  position: relative;
+}
+.top-header .topbox .activeBox::before {
+  content: " ";
+  height: 8px;
+  width: 8px;
+  background-color: green;
+  position: absolute;
+  border-radius: 50%;
+  top: -2px;
+  right: -4px;
+}
+
+.socialIcons .icons {
+  height: 50px;
+  width: 50px;
+  background-color: blanchedalmond;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.socialIcons > *:not(:last-child)::before {
+  content: " ";
+  height: 8px;
+  width: 8px;
+  background-color: red;
+  position: absolute;
+  border-radius: 50%;
+  top: 3px;
+  right: 4px;
+}
+.userBox {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.content-body {
+  margin: 30px;
+  /* background-color: lightcoral; */
+}
+
+.content-body h2 {
+  margin-bottom: 20px;
+  border-bottom: 2px solid blue;
+  width: 10%;
+  position: absolute;
+}
+
+.leadBox {
+  display: flex;
+  border: 1px solid none;
+  gap: 30px;
+  /* box-shadow:  0 10px 25px #38414a26; */
+  position: relative;
+}
+.leadNavs {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 20px 10px 20px;
+  border-bottom: 1px solid lightgrey;
+}
+.leadNavs div:first-child {
+  border-bottom: 2px solid blue;
+}
+.leadBox .firstBox {
+  width: 70%;
+  margin: 75px 0 0;
+}
+.leadBox .firstBox,
+.leadBox .secondBox {
+  /* background-color: aqua; */
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+  /* padding: 20px; */
+  border-radius: 4px;
+}
+.secondBox {
+  width: 30%;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  margin-bottom: 30px;
+}
+.secondBox .head {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.secondBox .nums {
+  font-size: 20px;
+}
+.navContent {
+  padding: 20px;
+}
+
+.tableNavContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+.tableNavContainer .leftTableNav,
+.tableNavContainer .rightTableNav {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  cursor: pointer;
+}
+.leftTableNav > *:nth-child(n + 2) {
+  background-color: white;
+  padding: 10px 20px;
+  border: 1px solid #abb0ba;
+  border-radius: 4px;
+}
+.rightTableNav > *:nth-child(n + 2) {
+  background-color: white;
+  padding: 10px 20px;
+  border: 1px solid blue;
+  color: blue;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.rightTableNav div:first-child {
+  background-color: blue;
   color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
 }
 
-.App-link {
-  color: #61dafb;
+.tableBodyBox {
+  margin-top: 25px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.tableFilters {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 5px 5px 10px;
+}
+.tableFilters .leftBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.tableFilters .rightBox {
+  display: flex;
+  gap: 10px;
+}
+.tableFilters .rightBox {
+  padding: 10px 20px;
+  background-color: #a9eaff;
+}
+.tableFilters .rightBox input {
+  border: none;
+  background-color: #a9eaff;
+  margin-left: 5px;
+}
+.tableFilters .rightBox input:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+.tableFilters .rightBox div:last-child {
+  border-left: 1px solid #abb0ba;
+}
+.rightBox div {
+  display: flex;
+  align-items: center;
+}
+.rightBox div:first-child span {
+  display: inline-flex;
+  margin-left: 5px;
+}
+.rightBox div:last-child span {
+  margin-left: 5px;
+}
+.dataTable {
+  width: 100%;
+}
+.dataTable,
+th,
+td {
+  /* border: 1px solid black; */
+  border-collapse: collapse;
+}
+.dataTable tr th,
+.dataTable tr td {
+  padding: 10px;
+  white-space: nowrap;
+}
+.dataTable tr th {
+  background-color: blue;
+  color: white;
+  text-align: left;
+}
+.dataTable tr {
+  border-bottom: 1px solid #ddd;
+}
+.dataTable .statusBox {
+  display: flex;
+  gap: 5px;
+}
+.dataTable .statusBox div {
+  border: 2px solid lightgreen;
+  padding: 5px 5px;
+  border-radius: 20px;
+  color: lightgreen;
+  font-size: 14px;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .side-nav {
+    width: 400px;
+    z-index: 9999;
+    /* position: absolute !important; */
   }
-  to {
-    transform: rotate(360deg);
+
+  .main-content {
+    margin-left: 0;
+  }
+  .main-content.expanded {
+    margin-left: 0;
+  }
+
+  .side-nav.open {
+    transform: translateX(0);
+  }
+
+  .side-nav.closed {
+    transform: translateX(-400px);
+  }
+
+  .top-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .toggle-btn {
+    margin-bottom: 10px;
+    margin-left: auto;
+  }
+  .topbox {
+    justify-content: end;
+    width: 100%;
+    font-size: 22px;
+    cursor: pointer;
+  }
+  .content-body h2 {
+    display: none;
+  }
+  .leadBox {
+    flex-direction: column;
+  }
+  .leadBox .firstBox {
+    margin-top: 0;
+    width: 100%;
+  }
+  .leadBox .secondBox {
+    margin-bottom: 0;
+    width: 100%;
+    padding: 20px;
+    font-size: 30px;
+  }
+  .tableParent {
+    overflow-x: auto;
+  }
+  .tableBodyBox {
+    overflow-x: auto;
+    width: 700px;
+    height: 600px;
+    margin-top: 40px;
+  }
+  .leadNavs div {
+    font-size: 20px;
+  }
+  .secondBox .head {
+    font-size: 44px;
+  }
+  .secondBox .nums {
+    font-size: 33px;
+  }
+  .dataTable tr th,
+  .dataTable tr td {
+    font-size: 25px;
+  }
+  .side-nav ul li {
+    font-size: 30px;
+    padding: 25px;
+    gap: 15px;
+  }
+  .side-nav ul span {
+    font-size: 40px !important;
+  }
+  .tableFilters .leftBox,
+  .tableFilters .rightBox,
+  .tableFilters .leftBox select,
+  .tableFilters .rightBox span {
+    font-size: 25px;
+  }
+  .tableNavContainer {
+    flex-direction: column;
+    margin-top: 40px;
+  }
+  .leftTableNav {
+    margin-bottom: 20px;
+  }
+  .tableNavContainer .leftTableNav,
+  .tableNavContainer .rightTableNav {
+    justify-content: center;
+    font-size: 30px;
+  }
+  .leftBox img {
+    height: 200px;
+    margin-left: 40px;
+  }
+  .leadNavs {
+    padding: 30px 30px 20px 30px;
+  }
+  .navContent{
+    padding: 40px;
+  }
+}
+@media (max-width: 768px) and (min-width: 608px) {
+  .leftBox ul {
+    overflow-y: auto;
+    display: block;
+    white-space: nowrap;
+    height: 490px;
+    /* background-color: black; */
+  }
+
+  .leftBox ul::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .leftBox ul::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .leftBox ul::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+
+  .leftBox ul::-webkit-scrollbar-thumb:hover {
+    background-color: #ccc;
   }
 }
